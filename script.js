@@ -1,27 +1,16 @@
 let myVar;
 
-myVar = 10;
-console.log(typeof myVar);
-myVar = 'Hello world';
-console.log(typeof myVar);
-myVar = true;
-console.log(typeof myVar);
-myVar = null;
-console.log(typeof myVar);
-myVar = undefined;
-console.log(typeof myVar);
-myVar = Symbol();
-console.log(typeof myVar);
-
-myVar = {};
+console.log('myVar', myVar);
 
 
-let mySymbol1 = Symbol('hello');
-let mySymbol2 = Symbol('hello');
-console.log(mySymbol1 == mySymbol2);
-//let myArr = [];
-//let regExp = /w+/g;
-//let func = function () {};
-//let error = Error('error message');
-//let date = new Date();
-//console.log(typeof myArr);
+console.log(null > 0);
+console.log(null == 0);
+console.log(null >= 0);
+
+let obj = {};
+
+console.log('obg.prop: ', obj.prop);
+
+let arr = [1, 2, 3];
+
+console.log('arr[5]: ', arr[5]);

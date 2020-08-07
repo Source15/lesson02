@@ -13,11 +13,11 @@ console.log(typeof deposit);
 let str = 'addExpenses';
 console.log(str.length);
 //конкотинируем строку
-console.log('period' + 'mission');
+console.log('Период равен ' + period + ' месяцев' + ' Цель заработать ' + mission + ' рублей');
 //приводим строку к нижнему регистру
 console.log(addExpenses.toLowerCase());
 //выводим в массив
-console.log(addExpenses.split(''));
+console.log(addExpenses.split(','));
 //построить доход за месяц
 let budgetDay = 1000;
-console.log(1000 / 30);
+console.log(budgetDay / 30);

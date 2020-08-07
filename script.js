@@ -16,6 +16,9 @@ console.log(typeof myVar);
 myVar = {};
 
 
+let mySymbol1 = Symbol('hello');
+let mySymbol2 = Symbol('hello');
+console.log(mySymbol1 == mySymbol2);
 //let myArr = [];
 //let regExp = /w+/g;
 //let func = function () {};

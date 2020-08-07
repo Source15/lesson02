@@ -1,16 +1,20 @@
-let myVar;
+let myTrue = true;
+let myFalse = false;
 
-console.log('myVar', myVar);
+
+console.log(2 === 2);
+console.log(2 === 3);
 
 
-console.log(null > 0);
-console.log(null == 0);
-console.log(null >= 0);
+console.log(Boolean(5));
+console.log(Boolean('Hello'));
+console.log(Boolean({}));
+console.log(Boolean([]));
+console.log(Boolean(function () {}));
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean(null));
+console.log(Boolean(NaN));
+console.log(Boolean(''));
 
-let obj = {};
-
-console.log('obg.prop: ', obj.prop);
-
-let arr = [1, 2, 3];
-
-console.log('arr[5]: ', arr[5]);
+if (5) {}

@@ -75,8 +75,8 @@ console.log(budgetDay);
 
 // Написать конструкцию условий (расчеты приведены в рублях)
 
-+
-prompt('Какой у вас уровень дохода?');
+
+confirm('Какой у вас уровень дохода?');
 if (Number(budgetDay) > 1200) {
    alert('У вас высокий уровеннь дохода!');
 } else if (Number(budgetDay) > 600 && Number(budgetDay) <= 1200) {

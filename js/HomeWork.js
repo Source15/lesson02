@@ -1,88 +1,59 @@
 'use strict';
 
-let money = 15000;
-let income = 'freelance';
-let addExpenses = 'такси,связь,интернет';
-let deposit = true;
-let mission = 1000000;
-let period = 12;
+let money = +prompt('Ваш месячный доход?', 50000),
+   income = 'freelance',
+   addExpenses = prompt('Перечислите расходы через запятую'),
+   deposit = confirm('Есть ли у вас депозит в банке?'),
+   mission = 1000000,
+   period = 12;
+let showTypeof = function (item) {
+   console.log(typeof item);
+};
 
-//Вводим значения типа данных
-console.log(typeof money);
-console.log(typeof freelance);
-console.log(typeof deposit);
-//длина строки
-let str = 'addExpenses';
-console.log(str.length);
-//конкотинируем строку
-console.log('Период равен ' + period + ' месяцев' + ' Цель заработать ' + mission + ' рублей');
-//приводим строку к нижнему регистру
-console.log(addExpenses.toLowerCase());
-//выводим в массив
-console.log(addExpenses.split(','));
-//построить доход за месяц
-let budgetDay = 1000;
-console.log(budgetDay / 30);
+showTypeof(typeof money);
+showTypeof(typeof income);
+showTypeof(typeof deposit);
+
+let expenses1 = prompt('Введите обязательную статью расходов?', 'Кварплата'),
+   amount1 = +prompt('Во сколько это обойдется?', '4000'),
+   expenses2 = prompt('Введите обязательную статью расходов?', 'Интернет'),
+   amount2 = +prompt('Во сколько это обойдется?', '1000');
 
 
 
-//Спрашиваем у пользователя “Ваш месячный доход?” и результат сохраняем в переменную money
+console.log(addExpenses.toLowerCase().split(','));
+
+let getExpensesMonth = function () {
+   return amount1 + amount2;
+};
+console.log('Расходы за месяц:' + getExpensesMonth());
+
+let getAccumulatedMonth = function () {
+   return money - getExpensesMonth();
+};
+
+let accumulatedMonth = getAccumulatedMonth();
+
+let getTargetMonth = function () {
+   return mission / accumulatedMonth
+};
+
+let budgetDay = accumulatedMonth / 30;
+console.log('Бюджет на день :' + budgetDay);
+
+console.log('Цель будет достигнута за ' + Math.ceil(getTargetMonth()) + ' месяца');
 
 
+let getStatusIncome = function () {
+   if (budgetDay > 1200) {
+      return ('У вас высокий уровеннь дохода!');
+   } else if (budgetDay > 600 && budgetDay <= 1200) {
+      return ('У вас средний уровень дохода!');
+   } else if (budgetDay >= 1 && budgetDay <= 600) {
+      return ('К сожалению у вас уровень дохода ниже среднего');
+   } else if (budgetDay <= 0) {
+      return ('Что то пошло не так!');
+   };
+};
 
-money = +prompt('Ваш месячный доход?');
-
-//Спросить у пользователя “Перечислите возможные расходы за рассчитываемый период через запятую” сохранить в переменную addExpenses
-addExpenses = ',';
-
-addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую');
-console.log(addExpenses);
-
-//Спросить у пользователя “Есть ли у вас депозит в банке?” и сохранить данные в переменной deposit (булево значение true/false)
-console.log(confirm('Есть ли у вас депозит в банке?'));
-//Спросить у пользователя по 2 раза каждый вопрос и записать ответы в разные переменные 
-//“Введите обязательную статью расходов?” (например expenses1, expenses2)
-//“Во сколько это обойдется?” (например amount1, amount2)
-//в итоге 4 вопроса и 4 разные переменных
-
-let expenses1 = prompt('Введите обязательную статью расходов?', 'Кварплата');
-
-let amount1 = +prompt('Во сколько это обойдется?', '4000');
-
-let expenses2 = prompt('Введите обязательную статью расходов?', 'Интернет');
-
-let amount2 = +prompt('Во сколько это обойдется?', '1000');
-
-
-
-
-//Вычислить бюджет на месяц, учитывая обязательные расходы, сохранить в новую переменную budgetMonth и вывести результат в консоль
-let budgetMonth = (money - (amount1 + amount2));
-console.log(budgetMonth);
-
-
-
-
-//Зная budgetMonth, посчитать за сколько месяцев будет достигнута цель mission, вывести в консоль, округляя в большую сторону (методы объекта Math в помощь)
-let resultExpression = Math.round(mission / budgetMonth);
-
-console.log(resultExpression);
-//Поправить budgetDay учитывая бюджет на месяц, а не месячный доход. Вывести в консоль  округлив в меньшую сторону 
-
-let day = 30;
-budgetDay = Math.floor(budgetMonth / day);
-console.log(budgetDay);
-
-// Написать конструкцию условий (расчеты приведены в рублях)
-
-
-confirm('Какой у вас уровень дохода?');
-if (Number(budgetDay) > 1200) {
-   alert('У вас высокий уровеннь дохода!');
-} else if (Number(budgetDay) > 600 && Number(budgetDay) <= 1200) {
-   alert('У вас средний уровень дохода!');
-} else if (Number(budgetDay) >= 1 && Number(budgetDay) <= 600) {
-   alert('К сожалению у вас уровень дохода ниже среднего');
-} else if (Number(budgetDay) <= 0) {
-   alert('Что то пошло не так!');
-}
+console.log(getStatusIncome());

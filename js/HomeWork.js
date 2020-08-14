@@ -50,8 +50,10 @@ let getExpensesMonth = function () {
          question = prompt('Во сколько это обойдется?');
       }
       while (isNaN(question) || question === '' || question === null);
+
+      sum += +question;
    }
-   sum += +question;
+   return sum;
 };
 
 let expensesMount = getExpensesMonth();
@@ -65,7 +67,7 @@ let getAccumulatedMonth = function () {
 let accumulatedMonth = getAccumulatedMonth();
 
 let getTargetMonth = function () {
-   return mission / accumulatedMonth
+   return mission / accumulatedMonth;
 };
 
 let budgetDay = accumulatedMonth / 30;

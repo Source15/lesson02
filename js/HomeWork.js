@@ -63,8 +63,8 @@ let appData = {
 
 
       for (let i = 0; i < 2; i++) {
-         let mount, 1
-         requiredExpenses = [];
+         let mount,
+            requiredExpenses = [];
          do {
             requiredExpenses[i] = prompt('Введите обязательную статью расходов:');
          } while (isNumber(requiredExpenses[i]));

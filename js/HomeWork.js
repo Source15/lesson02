@@ -1,6 +1,5 @@
 'use strict';
 
-//<--- Переменные --->
 let calculate = document.getElementById('start'), //Кнопка "Рассчитать"
    reset = document.getElementById('cancel'), //Кнопка "Сбросить"
    plusButtons = document.getElementsByTagName('button'),

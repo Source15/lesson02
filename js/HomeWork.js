@@ -136,8 +136,8 @@ const appData = {
       });
       incomeItems[0].parentNode.insertBefore(cloneIncomeBlock, incomeAdd);
       incomeItems = document.querySelectorAll('.income-items');
-      checkInputName();
-      checkInputNumber();
+      checkName();
+      checkNumber();
       if (incomeItems.length === 3) {
          incomeAdd.style.display = 'none';
       }

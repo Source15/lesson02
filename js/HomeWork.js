@@ -40,7 +40,7 @@ const isNumber = (num) => {
 const checkName = () => {
    placeholderName = document.querySelectorAll('[placeholder="Наименование"]');
    placeholderName.forEach(item => {
-      let regExp = /[^\d\s]/;
+      let regExp = /^[,. а-яА-ЯёЁ]+$/;
       item.addEventListener('input', () => {
          if (!regExp.test(item.value)) {
             item.value = '';

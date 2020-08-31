@@ -148,8 +148,8 @@ class AppData {
       });
       blockArr[0].parentNode.insertBefore(cloneBlock, btn);
       blockArr = document.querySelectorAll(`.${startClassName}-items`);
-      checkInputName();
-      checkInputNumber();
+      checkName();
+      checkNumber();
       if (blockArr.length === 3) {
          btn.style.display = 'none';
       }
